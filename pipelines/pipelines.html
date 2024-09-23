@@ -90,21 +90,21 @@
 <span id="geoarmadillo-pipeline"></span><h1>GeoArmadillo Pipelines<a class="headerlink" href="#geoarmadillo-pipelines" title="Link to this heading"></a></h1>
 <p>The GeoArmadillo <em>Pipeline</em> combines multiple <em>Pipeline Fragments</em> to perform tasks of any complexity.</p>
 <p>All <em>Blocks</em> that are needed to build a <em>Pipeline</em> can be found in the <em>Pipeline</em> category of the toolbox:</p>
-<img alt="The green *Pipeline* category" src="pipelines/images/Pipeline_category.png" />
+<img alt="The green *Pipeline* category" src="../_images/pipeline_category.png" />
 <section id="pipeline-fragments">
 <h2>Pipeline Fragments<a class="headerlink" href="#pipeline-fragments" title="Link to this heading"></a></h2>
 <p>The <em>Pipeline Fragments</em> control what actually happens in the <em>Pipeline</em>. Each <em>Pipeline Fragment</em> has a number, the ID number of the respective <em>Pipeline Fragment</em>. In the example below it is number 2. Additionally, a description can be added to each <em>Pipeline Fragment</em>. A single or multiple stacked <em>Blocks</em> are inserted into the free space of the <em>Pipeline Fragment</em>. Those <em>Blocks</em> define the computations performed in the respective <em>Pipeline Fragment</em>.</p>
-<img alt="A an image of the *Pipeline Fragment* block." src="pipelines/images/Pipeline_fragment.png" />
+<img alt="A an image of the *Pipeline Fragment* block." src="../_images/pipeline_fragment.png" />
 </section>
 <section id="the-pipeline">
 <h2>The Pipeline<a class="headerlink" href="#the-pipeline" title="Link to this heading"></a></h2>
 <p>The actual <em>Pipeline</em> combines all <em>Pipeline Fragments</em> in any order and thus generates the main method in the output Python script. There must be exactly one <em>Pipeline</em> <em>Block</em> (this is currently not enforced or checked, so take care of it yourself please!). The order of the <em>Pipeline Fragments</em> defines the order in which the computations are executed.</p>
-<img alt="The *Pipeline* block that gets compiles into the main method" src="pipelines/images/Pipeline.png" />
-<img alt="The *Pipeline Fragment* shadow used to sort the execution order in the main method." src="pipelines/images/Pipeline_shadow.png" />
+<img alt="The *Pipeline* block that gets compiles into the main method" src="../_images/pipeline.png" />
+<img alt="The *Pipeline Fragment* shadow used to sort the execution order in the main method." src="../_images/pipeline_shadow.png" />
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Running first <em>Pipeline</em> Fragement 2 and in continuation <em>Pipeline Fragment</em> 1 looks like this:</p>
-<img alt="pipelines/images/Pipeline_example.png" src="pipelines/images/Pipeline_example.png" />
+<img alt="../_images/pipeline_example.png" src="../_images/pipeline_example.png" />
 <p>Variables defined in previously executed <em>Pipeline Fragments</em> can be used in subsequent <em>Pipeline Fragments</em>. However, there is no future access. If <em>Pipeline Fragment</em> 1 computes a variable required in <em>Pipeline Fragment</em> 2, <em>Pipeline Fragment</em> 1 has to be listed above <em>Pipeline Fragment</em> 2 in the <em>Pipeline</em>.</p>
 </div>
 </section>
