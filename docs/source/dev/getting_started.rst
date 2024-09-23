@@ -29,7 +29,7 @@ Now, in your favourite Browser open: *localhost:3000*.
 
 You should be greated by the GeoArmadillo tool.
 
-.. image:: images/GeoArmadillo.png
+.. image:: images/geoarmadillo.png
     :alt: GeoArmadillo Tool start page.
 
 The GeoArmadillo Python Container
