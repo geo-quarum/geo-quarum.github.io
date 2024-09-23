@@ -10,7 +10,7 @@ GeoArmadillo
    The GeoArmadillo library is written using the reStructured Text markup language.
    You find more information on reStructuredText here: https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html
 
-GeoAramdillo is built with `blockly <https://developers.google.com/blockly>`.
+GeoAramdillo is built with `blockly <https://developers.google.com/blockly>`_.
 It is a graphical programming language for clicking together geochemical analysis pipelines.
 Those pipelines are generated into pandas pipelines that are excutable with a python interpreter.
 The design goal of GeoArmadillo is easing the programming of geochemical data analysis pipelines even for non programmers.
