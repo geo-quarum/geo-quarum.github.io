@@ -1,2 +1,3 @@
 sphinx_rtd_theme==v2.0.0
 docutils==0.20
+sphinx==7.4.7
