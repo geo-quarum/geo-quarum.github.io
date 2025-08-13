@@ -1,8 +1,8 @@
 Getting Started
 ===============
 
-We provide the *GeoArmadillo* and the *Pyhton* environment to execute generated python code
-currently in two Docker images at the official `Docker hub <https://hub.docker.com/u/quarum>`_.
+We provide the *GeoArmadillo* and the *Pyhton* environment to execute generated Python code
+currently in two ``Docker`` images at the official `Docker hub <https://hub.docker.com/u/quarum>`_.
 
 The `GeoArmadillo <https://hub.docker.com/r/quarum/GeoArmadillo>`_ images allows to run a container that serves a web server hosting the GeoArmadillo tool and language. The `GeoArmadillo Python <https://hub.docker.com/r/quarum/GeoArmadillo_python>`_ python image allows to run the python script generated inside the container. We will explain here shortly, how to run them.
 
