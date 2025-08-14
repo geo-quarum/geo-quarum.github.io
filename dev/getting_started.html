@@ -53,6 +53,7 @@
 <p class="caption" role="heading"><span class="caption-text">How To</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-docker-desktop-and-image-download">Installing Docker Desktop and Image Download</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-geoarmadillo-container">The GeoArmadillo Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#the-geoarmadillo-python-container">The GeoArmadillo Python Container</a></li>
 </ul>
@@ -88,33 +89,94 @@
              
   <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h1>
-<p>We provide the <em>GeoArmadillo</em> and the <em>Pyhton</em> environment to execute generated Python code
-currently in two <code class="docutils literal notranslate"><span class="pre">Docker</span></code> images at the official <a class="reference external" href="https://hub.docker.com/u/quarum">Docker hub</a>.</p>
-<p>The <a class="reference external" href="https://hub.docker.com/r/quarum/GeoArmadillo">GeoArmadillo</a> images allows to run a container that serves a web server hosting the GeoArmadillo tool and language. The <a class="reference external" href="https://hub.docker.com/r/quarum/GeoArmadillo_python">GeoArmadillo Python</a> python image allows to run the python script generated inside the container. We will explain here shortly, how to run them.</p>
-<section id="the-geoarmadillo-container">
-<h2>The GeoArmadillo Container<a class="headerlink" href="#the-geoarmadillo-container" title="Link to this heading"></a></h2>
-<p>The container runs a webserver on port 5137. It is required to command docker to map this port to some port on your local machine in order to get access to it on your host browser.</p>
-<p>We start the container from the commandline. Please ensure that Docker Desktop is already running bevor continuing here.</p>
-<p>Docker allows to specify a port using the <em>-p</em> flag. In the following command, we use the <em>-p</em> flag to bin the port 5137 of the container to 3000 on localhost:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:5173<span class="w"> </span>quarum/GeoArmadillo:0.0.1
+<p>We provide the <em>GeoArmadillo</em> and the <em>Pyhton</em> environment to execute generated Python code currently in two Docker images at the official <a href="https://hub.docker.com/u/quarum" target="_blank">Docker hub</a>.</p>
+<p>The <a href="https://hub.docker.com/r/quarum/GeoArmadillo" target="_blank">GeoArmadillo</a> image allows to run a container that serves a web server hosting the GeoArmadillo tool and language. The <a href="https://hub.docker.com/r/quarum/GeoArmadillo_python" target="_blank">GeoArmadillo
+Python</a> image allows to run the Python script generated inside the container. We will explain here shortly, how to run them.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Docker is a way to pack our software together with everything it needs to run, into something called a “container.” This means it will work the same no matter where you use it on your  computer, a server, or in the cloud.</p>
+<p>Advantage for you: Because we provide our software in a  Docker container, you don’t have to worry about installing extra tools or fixing setup problems. You can start using it right away, without technical hassle.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="installing-docker-desktop-and-image-download">
+<h2>Installing Docker Desktop and Image Download<a class="headerlink" href="#installing-docker-desktop-and-image-download" title="Link to this heading"></a></h2>
+<p>You have to <strong>install Docker Desktop</strong>. It can be downloaded for Windows, macOS and Linux free of charge from the Docker webpage at: <a href="https://www.docker.com/" target="_blank">https://www.docker.com/</a></p>
+<p>Afterwards, the two <strong>GeoArmadillo images</strong> have to be <strong>downloaded via</strong> the two <strong>shell commands</strong> given below. A <em>shell command</em> can be executed in a <em>shell</em> like <a href="https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell?view=powershell-7.5" target="_blank">PowerShell</a> (on Windows) and <a href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac" target="_blank">Terminal</a> (macOS and Linux). Open your shell, copy &amp; paste the <strong>following command</strong> into the shell and <strong>confirm</strong> by pressing enter.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>quarum/geoarmadillo:0.0.1
 </pre></div>
 </div>
-<p>We provided an image for arm64 (Apple Silicon, Snapdragon, etc.) and amd64 (Any modern Intel or AMD CPU). If you have any other CPU please try the <em>–platform linux/amd64</em> flag.</p>
-<p>If the container started successfully, you should see an output from the commandline similiar to this:</p>
+<p>This command will download the first image. After the download is completed you can download the second image via:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>quarum/geoarmadillo_python:0.0.1
+</pre></div>
+</div>
+<p>A successfull image download looks like this:</p>
+<img alt="Successfull download of the geoarmadillo_python image." src="../_images/successfull_image_download.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>geoarmadillo_python</em> image is rather large (&gt;2 GB), therefore, the download might take a few minutes. The images only have to be downloaded once. They are stored on your local device. You can find and manage them via the Docker Desktop software.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</section>
+<section id="the-geoarmadillo-container">
+<h2>The GeoArmadillo Container<a class="headerlink" href="#the-geoarmadillo-container" title="Link to this heading"></a></h2>
+<p>To start the container that runs GeoArmadillo, you <strong>first</strong> have to <strong>launch Docker Desktop</strong>, unless it is already running. After Docker Desktop launched, it can be minimised and will run in the background.</p>
+<p><strong>Afterwards</strong>, you have to <strong>run</strong> the <strong>GeoArmadillo image</strong> via the command below. Open your local shell, copy &amp; paste the command and confirm by pressing enter.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:5173<span class="w"> </span>quarum/geoarmadillo:0.0.1
+</pre></div>
+</div>
+<p>If the <strong>container started</strong> successfully, you should see an <strong>output</strong> in your shell similiar to the screenshot below. While working with GeoArmadillo, <strong>do not close the shell</strong>, but you can minimise it. Once you are done with your work, you can close the shell.</p>
 <img alt="Output of the container started on localhost and exposed port." src="../_images/starting-docker.png" />
-<p>Now, in your favourite Browser open: <em>localhost:3000</em>.</p>
-<p>You should be greated by the GeoArmadillo tool.</p>
+<p>Now, <strong>open</strong> your favourite <strong>browser</strong> (Firefox, Chrome, Edge…) and <strong>navigate</strong> to <strong>localhost:3000</strong> in the address line.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>http://localhost:3000
+</pre></div>
+</div>
+<p>The GeoArmadillo tool should open up and you can start building your data processing pipeline as described in <a class="reference internal" href="../pipelines/pipelines.html#geoarmadillo-pipeline"><span class="std std-ref">GeoArmadillo Pipelines</span></a>.</p>
 <img alt="GeoArmadillo Tool start page." src="../_images/geoarmadillo.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The container runs a webserver on port <em>5137</em> and it has to be mapped to a different port on your local machine to get access via your host browser. Docker allows to specify a port using the <em>-p</em> flag. In the command above, we use the <em>-p</em> flag to bin the port <em>5137</em> of the container to <em>3000</em> on localhost.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We provided an image for arm64 (Apple Silicon, Snapdragon, etc.) and amd64 (Any modern Intel or AMD CPU). If you have any other CPU please try the <em>–platform linux/amd64</em> flag.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:5173<span class="w">  </span>-platform<span class="w"> </span>linux/amd64<span class="w"> </span>quarum/geoarmadillo:0.0.1
+</pre></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 </section>
 <section id="the-geoarmadillo-python-container">
 <h2>The GeoArmadillo Python Container<a class="headerlink" href="#the-geoarmadillo-python-container" title="Link to this heading"></a></h2>
-<p>Once the <em>Piepline</em> is completed, click on the <strong>Download Python</strong> button circled in red.</p>
+<p>Once your pipeline is completed, click on the <strong>Download Python</strong> button in the upper left corner. This will translate your GeoArmadillo data processing pipeline into an executable Python script.</p>
 <img alt="a red circle on the download button" src="../_images/geoarmadillo-download_python.png" />
-<p>Copy the script into the same folder as your data and name it to your whish. The documentation will refer to the name of this script  in the docker command with <em>./your_script_name.py</em>.</p>
-<img alt="python script and data in the same folder" src="../_images/data_script.png" />
-<p>The goal is to mount the current folder in the <em>/experiments</em> folder in the docker image. Assuming your terminal is currently running in the folder where the data and the script is located,  using the <em>-v .:/experiments</em> flag with parameter in the docker run command does this. After successfull execution of the command, your data and scripts are available in the docker container and the python script is executed. As any file writen to the /experiments folder is also persisted to your current directory, the results are available on your host system after execution. The <em>–rm</em> flag ensures that the container gets removed after execution. While this is not strictly necessary, it saves ressources on your system. In case of debugging, the container should be run without the <em>–rm</em> flag. To run the python script inside the docker container, the full command looks as follows:</p>
+<p>A <strong>download window</strong> opens and you are asked to give the <strong>location and name</strong> where the <strong>generated Python script</strong> should be <strong>saved</strong>. To run the Python computation in the GeoArmadillo Python Container, the <strong>downloaded Python script</strong> and the <strong>input data</strong> should be stored in the <strong>same location</strong>. Give the script a meaningful name so that you remember what it does.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Define <strong>relative paths</strong> for input and output files in your <strong>data processing pipeline</strong>. <strong>Make sure</strong> that the generated <strong>Python script</strong> is <strong>stored accordingly</strong>.</p>
+<img alt="python script and data in the same folder" src="../_images/rel_path_input_output_script.png" />
+</div>
+<p>Afterwards, the <strong>generated and downloaded Python script</strong> should be <strong>executed</strong>. This is done within the GeoArmadillo Python Container. Open a <strong>new window or tab</strong> in your <strong>shell</strong>. Then, <strong>navigate</strong> to the <strong>folder</strong> in which the Python <strong>script and input data</strong> are <strong>stored</strong> (as described above). To <strong>navigate</strong> through folders within the shell you can <strong>use</strong> the <strong>cd command</strong>.</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line">Navigating in <em>PowerShell</em>: <a href="https://learn.microsoft.com/en-us/powershell/scripting/samples/managing-current-location?view=powershell-7.5" target="_blank">Managing current location</a></div>
+<div class="line">Navigating in <em>Terminal</em>: <a href="https://help.ubuntu.com/community/UsingTheTerminal" target="_blank">File & Directory Commands</a></div>
+</div>
+</div></blockquote>
+<p>The Python script is <strong>executed</strong> by the <strong>command</strong> below. Again, copy &amp; paste the command to your shell and confirm by pressing enter. <strong>Replace</strong> “<em>your_script_name.py</em>” by the <strong>name of your Python script</strong>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>.:/experiments<span class="w"> </span>quarum/geoarmadillo_python:0.0.1<span class="w"> </span>./your_script_name.py
 </pre></div>
+</div>
+<p>Once the computations are done, you will <strong>receive your output</strong> in the defined output folder(s).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The goal is to mount the current folder in the <em>/experiments</em> folder in the docker image. This is achieved via the <em>-v .:/experiments</em> flag in the command above.</p>
+<p>After successfull execution of the command, your data and scripts are available in the docker container and the Python script is executed. As any file writen to the <em>/experiments</em> folder is also persisted to your current directory, the results are available on your host system after execution. The <em>–rm</em> flag ensures that the container gets removed after execution. While this is not strictly necessary, it saves ressources on your system. In case of debugging, the container should be run without the <em>–rm</em> flag.</p>
 </div>
 </section>
 </section>
