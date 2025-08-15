@@ -35,7 +35,13 @@ You have to **install Docker Desktop**. It can be downloaded for Windows, macOS 
 
     <a href="https://www.docker.com/" target="_blank">https://www.docker.com/</a>
 
-Afterwards, the two **GeoArmadillo images** have to be **downloaded via** the two **shell commands** given below. A *shell command* can be executed in a *shell* like |launch_powershell| (on Windows) and |launch_macterminal| (macOS and Linux). Open your shell, copy & paste the **following command** into the shell and **confirm** by pressing enter.
+Afterwards, the two **GeoArmadillo images** have to be **downloaded via** the two **shell commands** given below. A *shell command* can be executed in a *shell* like |launch_powershell| (on Windows) and |launch_macterminal| (macOS and Linux). You can also use the Terminal that is implemented in the Docker Desktop application. You find it at the lower right bottom of the window.
+
+.. image:: images/docker_terminal.png
+    :width: 500
+    :alt: Click on Terminal at the lower right corner of Docker Desktop.
+
+Open your shell, copy & paste the **following command** into the shell and **confirm** by pressing enter.
 
 .. code:: bash
 
@@ -50,6 +56,7 @@ This command will download the first image. After the download is completed you 
 A successfull image download looks like this:
 
 .. image:: images/successfull_image_download.png
+    :width: 500
     :alt: Successfull download of the geoarmadillo_python image.
 
 .. note::
