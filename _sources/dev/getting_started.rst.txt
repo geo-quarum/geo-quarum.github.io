@@ -26,7 +26,7 @@ The |geoarmadillo_docker_link| image allows to run a container that serves a web
 
 |
 
-Installing Docker Desktop and Image Download
+1. Installing Docker Desktop and Image Download
 ################################################
 
 You have to **install Docker Desktop**. It can be downloaded for Windows, macOS and Linux free of charge from the Docker webpage at: |docker_webpage_link|
@@ -72,7 +72,7 @@ A successfull image download looks like this:
 
 |
 
-The GeoArmadillo Container
+2. The GeoArmadillo Container
 ##########################
 
 To start the container that runs GeoArmadillo, you **first** have to **launch Docker Desktop**, unless it is already running. After Docker Desktop launched, it can be minimised and will run in the background.
@@ -113,7 +113,7 @@ The GeoArmadillo tool should open up and you can start building your data proces
 
 |
 
-The GeoArmadillo Python Container
+3. The GeoArmadillo Python Container
 #################################
 
 Once your pipeline is completed, click on the **Download Python** button in the upper left corner. This will translate your GeoArmadillo data processing pipeline into an executable Python script.

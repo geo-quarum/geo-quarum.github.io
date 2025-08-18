@@ -53,9 +53,9 @@
 <p class="caption" role="heading"><span class="caption-text">How To</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-docker-desktop-and-image-download">Installing Docker Desktop and Image Download</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-geoarmadillo-container">The GeoArmadillo Container</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-geoarmadillo-python-container">The GeoArmadillo Python Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-docker-desktop-and-image-download">1. Installing Docker Desktop and Image Download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-geoarmadillo-container">2. The GeoArmadillo Container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-geoarmadillo-python-container">3. The GeoArmadillo Python Container</a></li>
 </ul>
 </li>
 </ul>
@@ -101,7 +101,7 @@ Python</a> image allows to run the Python script generated inside the container.
 <div class="line"><br /></div>
 </div>
 <section id="installing-docker-desktop-and-image-download">
-<h2>Installing Docker Desktop and Image Download<a class="headerlink" href="#installing-docker-desktop-and-image-download" title="Link to this heading"></a></h2>
+<h2>1. Installing Docker Desktop and Image Download<a class="headerlink" href="#installing-docker-desktop-and-image-download" title="Link to this heading"></a></h2>
 <p>You have to <strong>install Docker Desktop</strong>. It can be downloaded for Windows, macOS and Linux free of charge from the Docker webpage at: <a href="https://www.docker.com/" target="_blank">https://www.docker.com/</a></p>
 <p>Afterwards, the two <strong>GeoArmadillo images</strong> have to be <strong>downloaded via</strong> the two <strong>shell commands</strong> given below. A <em>shell command</em> can be executed in a <em>shell</em> like <a href="https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell?view=powershell-7.5" target="_blank">PowerShell</a> (on Windows) and <a href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac" target="_blank">Terminal</a> (macOS and Linux). You can also use the Terminal that is implemented in the Docker Desktop application. You find it at the lower right bottom of the window.</p>
 <a class="reference internal image-reference" href="../_images/docker_terminal.png"><img alt="Click on Terminal at the lower right corner of Docker Desktop." src="../_images/docker_terminal.png" style="width: 500px;" /></a>
@@ -124,7 +124,7 @@ Python</a> image allows to run the Python script generated inside the container.
 </div>
 </section>
 <section id="the-geoarmadillo-container">
-<h2>The GeoArmadillo Container<a class="headerlink" href="#the-geoarmadillo-container" title="Link to this heading"></a></h2>
+<h2>2. The GeoArmadillo Container<a class="headerlink" href="#the-geoarmadillo-container" title="Link to this heading"></a></h2>
 <p>To start the container that runs GeoArmadillo, you <strong>first</strong> have to <strong>launch Docker Desktop</strong>, unless it is already running. After Docker Desktop launched, it can be minimised and will run in the background.</p>
 <p><strong>Afterwards</strong>, you have to <strong>run</strong> the <strong>GeoArmadillo image</strong> via the command below. Open your local shell, copy &amp; paste the command and confirm by pressing enter.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:5173<span class="w"> </span>quarum/geoarmadillo:0.0.1
@@ -154,7 +154,7 @@ Python</a> image allows to run the Python script generated inside the container.
 </div>
 </section>
 <section id="the-geoarmadillo-python-container">
-<h2>The GeoArmadillo Python Container<a class="headerlink" href="#the-geoarmadillo-python-container" title="Link to this heading"></a></h2>
+<h2>3. The GeoArmadillo Python Container<a class="headerlink" href="#the-geoarmadillo-python-container" title="Link to this heading"></a></h2>
 <p>Once your pipeline is completed, click on the <strong>Download Python</strong> button in the upper left corner. This will translate your GeoArmadillo data processing pipeline into an executable Python script.</p>
 <img alt="a red circle on the download button" src="../_images/geoarmadillo-download_python.png" />
 <p>A <strong>download window</strong> opens and you are asked to give the <strong>location and name</strong> where the <strong>generated Python script</strong> should be <strong>saved</strong>. To run the Python computation in the GeoArmadillo Python Container, the <strong>downloaded Python script</strong> and the <strong>input data</strong> should be stored in the <strong>same location</strong>. Give the script a meaningful name so that you remember what it does.</p>
