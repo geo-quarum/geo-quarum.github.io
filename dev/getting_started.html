@@ -106,11 +106,11 @@ Python</a> image allows to run the Python script generated inside the container.
 <p>Afterwards, the two <strong>GeoArmadillo images</strong> have to be <strong>downloaded via</strong> the two <strong>shell commands</strong> given below. A <em>shell command</em> can be executed in a <em>shell</em> like <a href="https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/starting-windows-powershell?view=powershell-7.5" target="_blank">PowerShell</a> (on Windows) and <a href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac" target="_blank">Terminal</a> (macOS and Linux). You can also use the Terminal that is implemented in the Docker Desktop application. You find it at the lower right bottom of the window.</p>
 <a class="reference internal image-reference" href="../_images/docker_terminal.png"><img alt="Click on Terminal at the lower right corner of Docker Desktop." src="../_images/docker_terminal.png" style="width: 500px;" /></a>
 <p>Open your shell, copy &amp; paste the <strong>following command</strong> into the shell and <strong>confirm</strong> by pressing enter.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>quarum/geoarmadillo:0.0.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>quarum/geoarmadillo:0.0.2
 </pre></div>
 </div>
 <p>This command will download the first image. After the download is completed you can download the second image via:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>quarum/geoarmadillo_python:0.0.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>quarum/geoarmadillo_python:0.0.2
 </pre></div>
 </div>
 <p>A successfull image download looks like this:</p>
@@ -127,7 +127,7 @@ Python</a> image allows to run the Python script generated inside the container.
 <h2>2. The GeoArmadillo Container<a class="headerlink" href="#the-geoarmadillo-container" title="Link to this heading"></a></h2>
 <p>To start the container that runs GeoArmadillo, you <strong>first</strong> have to <strong>launch Docker Desktop</strong>, unless it is already running. After Docker Desktop launched, it can be minimised and will run in the background.</p>
 <p><strong>Afterwards</strong>, you have to <strong>run</strong> the <strong>GeoArmadillo image</strong> via the command below. Open your local shell, copy &amp; paste the command and confirm by pressing enter.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:5173<span class="w"> </span>quarum/geoarmadillo:0.0.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:5173<span class="w"> </span>quarum/geoarmadillo:0.0.2
 </pre></div>
 </div>
 <p>If the <strong>container started</strong> successfully, you should see an <strong>output</strong> in your shell similiar to the screenshot below. While working with GeoArmadillo, <strong>do not close the shell</strong>, but you can minimise it. Once you are done with your work, you can close the shell.</p>
@@ -145,7 +145,7 @@ Python</a> image allows to run the Python script generated inside the container.
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>We provided an image for arm64 (Apple Silicon, Snapdragon, etc.) and amd64 (Any modern Intel or AMD CPU). If you have any other CPU please try the <em>–platform linux/amd64</em> flag.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:5173<span class="w">  </span>-platform<span class="w"> </span>linux/amd64<span class="w"> </span>quarum/geoarmadillo:0.0.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">3000</span>:5173<span class="w">  </span>-platform<span class="w"> </span>linux/amd64<span class="w"> </span>quarum/geoarmadillo:0.0.2
 </pre></div>
 </div>
 </div>
@@ -171,7 +171,7 @@ Python</a> image allows to run the Python script generated inside the container.
 </div>
 </div></blockquote>
 <p>The Python script is <strong>executed</strong> by the <strong>command</strong> below. Again, copy &amp; paste the command to your shell and confirm by pressing enter. <strong>Replace</strong> “<em>your_script_name.py</em>” by the <strong>name of your Python script</strong>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>.:/experiments<span class="w"> </span>quarum/geoarmadillo_python:0.0.1<span class="w"> </span>./your_script_name.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>.:/experiments<span class="w"> </span>quarum/geoarmadillo_python:0.0.2<span class="w"> </span>./your_script_name.py
 </pre></div>
 </div>
 <p>Once the computations are done, you will <strong>receive your output</strong> in the defined output folder(s).</p>
