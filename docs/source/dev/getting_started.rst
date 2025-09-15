@@ -45,13 +45,13 @@ Open your shell, copy & paste the **following command** into the shell and **con
 
 .. code:: bash
 
-    docker pull quarum/geoarmadillo:0.0.1
+    docker pull quarum/geoarmadillo:0.0.2
 
 This command will download the first image. After the download is completed you can download the second image via:
 
 .. code:: bash
 
-    docker pull quarum/geoarmadillo_python:0.0.1
+    docker pull quarum/geoarmadillo_python:0.0.2
 
 A successfull image download looks like this:
 
@@ -81,7 +81,7 @@ To start the container that runs GeoArmadillo, you **first** have to **launch Do
 
 .. code:: bash
 
-	docker run -p 3000:5173 quarum/geoarmadillo:0.0.1
+	docker run -p 3000:5173 quarum/geoarmadillo:0.0.2
 
 If the **container started** successfully, you should see an **output** in your shell similiar to the screenshot below. While working with GeoArmadillo, **do not close the shell**, but you can minimise it. Once you are done with your work, you can close the shell.
 
@@ -109,7 +109,7 @@ The GeoArmadillo tool should open up and you can start building your data proces
 
     .. code:: bash
 
-        docker run -p 3000:5173  -platform linux/amd64 quarum/geoarmadillo:0.0.1
+        docker run -p 3000:5173  -platform linux/amd64 quarum/geoarmadillo:0.0.2
 
 |
 
@@ -138,7 +138,7 @@ The Python script is **executed** by the **command** below. Again, copy & paste 
 
 .. code:: bash
 
-	 docker run --rm -v .:/experiments quarum/geoarmadillo_python:0.0.1 ./your_script_name.py
+	 docker run --rm -v .:/experiments quarum/geoarmadillo_python:0.0.2 ./your_script_name.py
 
 Once the computations are done, you will **receive your output** in the defined output folder(s).
 
